@@ -1,0 +1,115 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.login.LoginView" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_bg" />
+
+        <ScrollView
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo"
+                    android:tint="@color/white" />
+
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit_text_primary_dark"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightestGray"
+                    android:textSize="14sp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_text_primary_dark"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:padding="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightestGray"
+                    android:textSize="14sp"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+                <Button
+                    android:id="@+id/email_sign_in_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_button_solid"
+                    android:onClick="@{() -> view.onLoginButtonClicked()}"
+                    android:text="LOG IN"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/forgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:onClick="@{()-> view.onForgotPasswordButtonClicked()}"
+                    android:text="Forgot Password?"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginTop="100dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:onClick="@{()-> view.onRegisterButtonClicked()}"
+                    android:text="No Account Yet? Sign up here"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>

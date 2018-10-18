@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="tip.dgts.eventapp.utils.StringUtils" />
+        <variable
+            name="item"
+            type="tip.dgts.eventapp.model.data.Location"/>
+
+        <import type="android.view.View" />
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.eventSimple.EventSimpleDetailView"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:clickable="true"
+        android:onClick="@{()->view.onLocationClicked(item)}"
+        android:orientation="vertical"
+        android:focusable="true">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/drawableItem"
+            android:orientation="horizontal"
+            android:padding="6dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/bullet"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textContent"
+                android:layout_marginLeft="6dp"
+                android:textStyle="italic"
+                android:text="@{item.name}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

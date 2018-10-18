@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="tip.dgts.eventapp.utils.StringUtils" />
+
+        <variable
+            name="item"
+            type="tip.dgts.eventapp.model.data.Feedback" />
+
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.eventSimple.feedbacks.FeedbacksView" />
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:focusable="true">
+
+        <!--android:onClick="@{()->view.onLocationClicked(item)}"-->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="top"
+            app:civ_circle_background_color="@color/lightestGray"
+            android:padding="8dp"
+            android:id="@+id/userImage"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:text='@{item.otherUser.firstName+" "+item.otherUser.lastName}'
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                android:textColor="@color/darkGray" />
+
+            <android.support.v7.widget.AppCompatRatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:numStars="5"
+                android:rating="@{item.rate}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:text="@{item.feedback}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                android:textColor="@color/darkGray" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

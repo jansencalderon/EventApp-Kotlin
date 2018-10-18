@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="tip.dgts.eventapp.utils.StringUtils" />
+
+        <variable
+            name="item"
+            type="tip.dgts.eventapp.model.data.Sponsor" />
+
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.eventSimple.EventSimpleDetailView" />
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginEnd="16dp"
+        android:minWidth="100dp"
+        android:focusable="false"
+        android:onClick="@{()->view.onSponsorClicked(item)}"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:text="@{item.name}"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:textColor="@color/darkGray" />
+
+
+    </LinearLayout>
+</layout>

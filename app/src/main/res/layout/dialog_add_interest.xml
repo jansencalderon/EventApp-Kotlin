@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="tip.dgts.eventapp.utils.DateTimeUtils" />
+
+        <import type="tip.dgts.eventapp.utils.StringUtils" />
+
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.main.tabs.MainPageView" />
+
+        <variable
+            name="event"
+            type="tip.dgts.eventapp.model.data.Event" />
+
+        <variable
+            name="contentVisible"
+            type="boolean" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/eventInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventImage"
+        android:minWidth="300dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="Add Interest"
+            android:textSize="12sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spinnerInterests"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:spinnerMode="dialog" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_slight_accent"
+            android:paddingBottom="4dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="4dp"
+            android:text="ADD"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="tip.dgts.eventapp.model.data.Interest" />
+
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.profile.ProfileView" />
+
+    </data>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/interest"
+            android:paddingBottom="6dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:onClick="@{()->view.onInterestClicked(item)}"
+            android:background="@drawable/rounded_button_gray"
+            android:paddingTop="6dp"
+            android:text="@{item.title}"
+            android:textColor="@color/white" />
+</layout>

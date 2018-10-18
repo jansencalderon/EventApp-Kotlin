@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="user"
+            type="tip.dgts.eventapp.model.data.User"/>
+        <variable
+            name="view"
+            type="tip.dgts.eventapp.ui.profile.update.UpdateProfileView" />
+    </data>
+
+   
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                android:background="@color/colorPrimary"
+                app:title="Venue Map" />
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/venue_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+</layout>
